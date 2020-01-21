@@ -1,10 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); i++)
-#define REP(i, d, n) for(int i=(d); i<(n); i++)
-using ll = long long;
-using P = pair<int, int>;
-
 //素数判定
 bool is_prime(int x){
 
@@ -71,7 +64,15 @@ public:
         if(fl.size() == 0){
             return {};
         }
-        vector<P> ret(1, P());
+        vector<P> res(1, P(fl[0], 0));
+        for (int p : fl) {
+            if (res.back().first == p) {
+                res.back().second++;
+            }
+            else {
+                res.emplace_back(p, 1);
+            }
+        }
         return ret;
     }
 };

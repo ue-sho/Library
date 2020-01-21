@@ -1,17 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-#define REP(i, d, n) for(int i=(d); i<(n); ++i)
-typedef long long ll;
-const int mod = 1e9 + 7;
-
 // nCr 組み合わせ
 
 const int MAX = 1e5; //ここは問題によって変える
-
 //  n!  *   (k!)^-1  *  ((n-k)!)^-1
 ll fac[MAX], finv[MAX], inv[MAX];
-
 
 // テーブルを作る前処理
 // 計算量　O(n)
@@ -37,3 +28,5 @@ long long Combination(int n, int k){
     } 
     return fac[n] * (finv[k] * finv[n - k] % mod) % mod;
 }
+
+

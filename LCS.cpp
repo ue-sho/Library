@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-
 const int MAX = 1000; //ここは問題によって変える
 
 //最長共通部分列問題

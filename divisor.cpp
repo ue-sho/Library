@@ -1,9 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-#define REP(i, d, n) for(int i=(d); i<(n); ++i)
-typedef long long ll;
-
 //約数列挙
 vector<int> divisor(int n){
 

@@ -1,8 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-#define REP(i, d, n) for(int i=(d); i<(n); ++i)
-typedef long long ll;
+//ベルマンフォード　負のコストがあっても最短経路出せる
 
 #define MAX_V 1000
 #define INF 10000000
@@ -13,13 +9,12 @@ struct edge {
     int cost; //移動コスト
 };
 
-int main()
-{
-    int V; //頂点の数
-    int side; //辺の数
-    int S; //始点
-    int G; //終点
-    int d[MAX_V]; //始点からそこまで行くのにかかるコスト
+int bellman_ford(){
+    int V;      //頂点の数
+    int side;   //辺の数
+    int S;      //始点
+    int G;      //終点
+    int d[MAX_V];       //始点からそこまで行くのにかかるコスト
     vector<edge> edges; //移動の情報を保存する
 
     cout << "頂点の数:";
@@ -31,8 +26,8 @@ int main()
     cout << "終点:";
     cin >> G;
 
-    fill(d, d+V, INF); //すべての頂点をINFにする
-    d[S] = 0; //始点を0にする
+    fill(d, d+V, INF);  //すべての頂点をINFにする
+    d[S] = 0;           //始点を0にする
 
     for (int i = 0; i < side; i++) {
         struct edge add;

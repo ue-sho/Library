@@ -1,9 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-#define REP(i, d, n) for(int i=(d); i<(n); ++i)
-typedef long long ll;
-const int mod = 1e9 + 7;
 
 /* 長さ nn の正の整数列 a1,a2,…,ana1,a2,…,an が与えられる。整数列の連続する部分列のうち、
  [ ~~~~~~ 」という条件を満たす最大長 (最小の長さ、数え上げ) を求めよ。 */

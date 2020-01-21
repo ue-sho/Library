@@ -1,15 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-#define REP(i, d, n) for(int i=(d); i<(n); ++i)
-typedef long long ll;
-const int mod = 1e9 + 7;
-
+//最長増加部分列問題
 const int MAX = 100000;
 int n, a[MAX];
 int dp[MAX+1];
 
-//最長増加部分列問題
 int lis(){
     dp[0] = a[0];
     int length = 1;

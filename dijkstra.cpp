@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for(int i=0; i<(n); ++i)
-#define REP(i, d, n) for(int i=(d); i<(n); ++i)
+//ダイクストラ
+
+// <最短距離, 頂点の番号>
+//using P = pair<int, int>;
 
 const int INF = 1e+9;
 const int MAX_V = 10;
@@ -10,9 +10,6 @@ struct edge {
     int to;
     int cost;
 };
-
-// <最短距離, 頂点の番号>
-using P = pair<int, int>;
 
 int V;
 vector<edge> G[MAX_V];

@@ -1,6 +1,7 @@
 // nCr 組み合わせ
 
-const int MAX = 1e5; //ここは問題によって変える
+const int MAX = 1e5+1; //ここは問題によって変える
+const int mod = 1e9+7
 //  n!  *   (k!)^-1  *  ((n-k)!)^-1
 ll fac[MAX], finv[MAX], inv[MAX];
 
@@ -19,7 +20,7 @@ void COMinit() {
 
 // 二項係数計算 nCk
 // 計算量　O(1)
-long long Combination(int n, int k){
+ll Combination(int n, int k){
     if (n < k){
         return 0;
     }

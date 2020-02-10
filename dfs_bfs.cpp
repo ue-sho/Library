@@ -1,21 +1,13 @@
 //dfs 一般的な形
-const int MAX = 50;
+vector<vector<int>> graph;
 
-int n;
-bool graph[MAX][MAX];
-bool visit[MAX];
-
-void dfs(int x){
-
-    if(visit[x]){ //訪問済み
-        return;
-    }
-
-    visit[x] = true;
-    rep(i, n){
-        if(graph[x][i]){
-            dfs(i);
+void dfs(int node, int pre = -1){
+    for(auto i : graph[node]){
+        int u = graph[u][i];
+        if(u == pre){
+            continue;
         }
+        dfs(i, node);
     }
 }
 /******************************************/

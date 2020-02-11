@@ -2,12 +2,11 @@
 vector<vector<int>> graph;
 
 void dfs(int node, int pre = -1){
-    for(auto i : graph[node]){
-        int u = graph[u][i];
+    for(auto u : graph[node]){
         if(u == pre){
             continue;
         }
-        dfs(i, node);
+        dfs(u, node);
     }
 }
 /******************************************/

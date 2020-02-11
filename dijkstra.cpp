@@ -3,7 +3,7 @@
 // <最短距離, 頂点の番号>
 //using P = pair<int, int>;
 
-const int INF = 1e+9;
+const int INF = 1e9;
 const int MAX_V = 10;
 
 struct edge {

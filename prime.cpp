@@ -1,14 +1,3 @@
-//素数判定
-bool is_prime(int x){
-
-    for(int i = 2; i * i <= x; ++i) {
-        if(x % i == 0){
-            return false;
-        }
-    }
-    return true;
-}
-
 // 素因数分解
 // pairのfirstに素因数　secondに素因数の数
 template <class T>
@@ -35,6 +24,7 @@ class Prime{
     int n;
     vector<int> factor, primes;    
 public:
+    //エラストテネスの篩
     Prime(int n=1) : n(n), factor(n+1){
         factor[0] = factor[1] = -1;
         for(ll i=2; i <= n; ++i){
@@ -51,6 +41,7 @@ public:
         return factor[x] == x;
     }
 
+    //約数列挙
     vector<int> factorList(int x){
         vector<int> ret;
         while(x != 1){
@@ -59,6 +50,7 @@ public:
         }
     }
 
+    //素因数分解
     vector<P> factorize(int x){
         vector<int> fl = factorList(x);
         if(fl.size() == 0){

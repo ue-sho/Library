@@ -1,6 +1,7 @@
 const int mod = 1000000007;
-struct mint {
+class mint {
     ll x;
+public:
     mint(ll x=0) : x((x%mod+mod)%mod) {}
     mint operator-() const { 
       return mint(-x);
@@ -48,8 +49,12 @@ struct mint {
         mint res(*this);
         return res/=a;
     }
-};
 
+    friend ostream& operator<<(ostream& os, const mint& m){
+        os << m.x;
+        retrun os;
+    }
+};
 
 //modありのべき乗　xのn乗
 ll mod_pow(ll x, ll n){
@@ -82,15 +87,4 @@ ll mod_inv(ll a){
         u += mod;
     } 
     return u;
-}
-
-// a ÷ b mod. MOD を計算してみる
-int main() {
-
-    long long a = 12345678900000;
-    long long b = 100000;
-
-    // a を 10000000007 で割ってから b の逆元をかけて計算
-    a %= mod;
-    cout << a * mod_inv(b) % mod << endl;
 }

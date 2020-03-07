@@ -1,9 +1,12 @@
 constexpr int mod = 1000000007;
-struct mint {
+class mint {
 public:
     ll x;
 
-    constexpr mint(ll x=0) : x((x%mod+mod)%mod) {}
+    constexpr mint(ll x = 0){
+        x = x % mod;
+        if(x < 0) x += mod;
+    }
     constexpr mint operator-() const { 
       return mint(-x);
     }
@@ -57,22 +60,7 @@ public:
     }
 };
 
-//modありのべき乗　xのn乗
-ll mod_pow(ll x, ll n){
-
-    ll ret = 1;
-    while(n > 0){
-        if(n & 1){
-            (ret *= x) %= mod;
-        }
-        (x *= x) %= mod;
-        n >>= 1;
-    }
-    return ret;
-}
-
-//逆元　(割り算をmodしていきたいときに使用)
-//modの世界では割り算に余りはない
+//逆元
 ll mod_inv(ll a){
     
     ll b = mod, u = 1, v = 0;

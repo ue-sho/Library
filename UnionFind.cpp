@@ -1,8 +1,8 @@
 class UnionFind {
 public:
     vector<int> d;
-    UnionFind(int n=0) : d(n, -1) {}
-    // 経路縮約を行いながら根を探す
+    UnionFind(int n = 0) : d(n, -1) {}
+    // 経路縮約を行いながら根を探す メモ化再帰
     int find(int x) {
         if(d[x] < 0){
             return x;
@@ -16,7 +16,7 @@ public:
         if(x == y){
             return false;
         }
-        if(d[x] > d[y]){
+        if(size(x) < size(y)){
             swap(x,y);
         } 
         d[x] += d[y];

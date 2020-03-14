@@ -2,11 +2,7 @@ constexpr int mod = 1000000007;
 class mint {
 public:
     ll x;
-
-    constexpr mint(ll x = 0){
-        x = x % mod;
-        if(x < 0) x += mod;
-    }
+    constexpr mint(long long x=0) : x((x % mod + mod) % mod) {}
     constexpr mint operator-() const { 
       return mint(-x);
     }
@@ -53,7 +49,6 @@ public:
         mint res(*this);
         return res/=a;
     }
-
     friend ostream& operator<<(ostream& os, const mint& a){
         os << a.x;
         return os;

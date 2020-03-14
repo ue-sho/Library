@@ -54,7 +54,7 @@ vector<vector<int>> graph
 void bfs(){ 
     
     queue<int> q;
-    vector<int> distance(n, INF);
+    vector<int> distance(n, -1);
 
     q.push(0);
     distance[0] = 0;
@@ -62,11 +62,11 @@ void bfs(){
     while(!q.empty()){
         int u = q.front(); q.pop();
         for(auto v : graph[u]){
-            if(distance[graph[u][v]] != INF){
+            if(distance[v] != -1){
                 continue; //もう探索済み
             }
-            distance[graph[u][v]] = distance[u] + 1;
-            q.push(graph[u][v]);
+            distance[v] = distance[u] + 1;
+            q.push(v);
         }
     }
 }

@@ -1,31 +1,9 @@
-// 素因数分解
-// pairのfirstに素因数　secondに素因数の数
-template <class T>
-vector<pair<T, int>> factorize(T num){
-
-    vector<pair<T, int>> res;
-    for(T i = 2; i * i <= num; ++i){
-        if(num % i){  //割り切れないなら素因数ではない
-            continue;
-        }
-        res.emplace_back(i, 0);
-        while(num % i == 0){
-            res.back().second++;
-            num /= i;
-        }
-    }
-    if(num != 1){
-        res.emplace_back(num, 1);
-    }
-    return res;
-}
-
 class Prime{
+public:
     int n;
     vector<int> factor, primes;    
-public:
     //エラストテネスの篩
-    Prime(int n=1) : n(n), factor(n+1){
+    constexpr Prime(int n=100000) : n(n), factor(n+1){
         factor[0] = factor[1] = -1;
         for(ll i=2; i <= n; ++i){
             if(factor[i]) continue;
@@ -36,22 +14,19 @@ public:
             }
         }
     }
-
-    bool is_prime(int x){
+    constexpr bool is_prime(int x){
         return factor[x] == x;
     }
-
     //約数列挙
-    vector<int> factorList(int x){
+    constexpr vector<int> factorList(int x){
         vector<int> ret;
         while(x != 1){
             ret.push_back(factor[x]);
             x /= factor[x];
         }
     }
-
     //素因数分解
-    vector<P> factorize(int x){
+    constexpr vector<P> factorize(int x){
         vector<int> fl = factorList(x);
         if(fl.size() == 0){
             return {};

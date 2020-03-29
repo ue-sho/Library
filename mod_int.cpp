@@ -37,8 +37,6 @@ public:
         if (t&1) a *= *this;
         return a;
     }
-
-    // for prime mod
     constexpr mint inv() const {
         return pow(mod-2);
     }
@@ -54,21 +52,3 @@ public:
         return os;
     }
 };
-
-//逆元
-ll mod_inv(ll a){
-    
-    ll b = mod, u = 1, v = 0;
-    while(b){
-        ll t = a / b;
-        a -= t * b; 
-        swap(a, b);
-        u -= t * v; 
-        swap(u, v);
-    }
-    u %= mod;
-    if (u < 0){
-        u += mod;
-    } 
-    return u;
-}

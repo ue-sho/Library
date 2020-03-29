@@ -1,3 +1,20 @@
+// 逆元
+ll mod_inv(ll a){
+    ll b = mod, u = 1, v = 0;
+    while(b){
+        ll t = a / b;
+        a -= t * b;
+        swap(a, b);
+        u -= t * v;
+        swap(u, v);
+    }
+    u %= mod;
+    if (u < 0){
+        u += mod;
+    }
+    return u;
+}
+
 //最大公約数
 template <class T>
 T gcd(T a, T b) {

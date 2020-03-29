@@ -5,7 +5,7 @@ constexpr int mod = 1e9+7;
 class Combination {
 public:
     vector<ll> fac, finv, inv;
-    Combination(int n) : fac(n), finv(n), inv(n) {
+    constexpr Combination(int n) : fac(n), finv(n), inv(n) {
         fac[0] = fac[1] = 1;
         finv[0] = finv[1] = 1;
         inv[1] = 1;
@@ -15,7 +15,7 @@ public:
             finv[i] = finv[i - 1] * inv[i] % mod;
         }
     }
-    ll calc(int n, int k){
+    constexpr ll calc(int n, int k){
         if (n < k){
             return 0;
         }

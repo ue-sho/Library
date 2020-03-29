@@ -1,24 +1,21 @@
-//二分探索 基本形
+//めぐる式二分探索
+bool isOK(int index, int key) {
+    if (a[index] >= key) return true;
+    else return false;
+}
 
-const ll MAX = 1000000000;
-int binary_search(){
-    
-    ll a, b, x;
-    cin >> a >> b >> x;
+int binary_search(int key){
 
-    ll left= 0, right = MAX, mid;
-    while(right - left > 1){
-        mid = (right + left) / 2;
+    ll ng = -1, ok = LLONG_MAX-1;
+    while(abs(ok - ng) > 1){
+        ll mid = (ok + ng) / 2;
 
-        ll ans; /*  = a * mid + b * cnt;  */ //ここに計算式
-        if(ans > x){
-            right = mid;
+        if(isOK(mid, key)){
+            ok = mid;
         }
         else{
-            left = mid;
+            ng = mid;
         }
     }
-    cout << left << endl;
-
-    return 0;
+    return ok;
 }

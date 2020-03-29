@@ -1,57 +1,18 @@
-//dfs 一般的な形
+/*  dfs  */
 vector<vector<int>> graph;
 
-void dfs(int node, int pre = -1){
-    for(auto u : graph[node]){
+void dfs(int v, int pre = -1){
+    for(auto u : graph[v]){
         if(u == pre){
             continue;
         }
-        dfs(u, node);
+        dfs(u, v);
     }
 }
 
-/*bfs***************************************************/
-
-const int INF = 1001001001;
-//4近傍
-const int di[] = {-1, 0, 1, 0};     //8近傍なら　{-1, -1, -1, 0, 0, 1, 1, 1}
-const int dj[] = {0, -1, 0, 1};     //          {-1, 0, 1, -1, 1, -1, 0, 1}
-
-void bfs(){
-
-    vector<vector<int>> distance(h, vector<int>(w, INF));
-    queue<P> que;
-    auto update = [&](int i, int j, int x){
-        if(distance[i][j] != INF){
-            return;
-        }
-        distance[i][j] = x;
-        que.emplace(i, j);
-    };
-    update(0, 0, 0);
-
-    while(!que.empty()){
-        int i = que.front().first;
-        int j = que.front().second;
-        que.pop();
-        rep(direction, 4){
-            int ni = i + di[direction];
-            int nj = j + dj[direction];
-            if(ni < 0 || ni >= h || nj < 0 || nj >= w){
-                continue;
-            }
-            if(graph[ni][nj] == '#'){
-                continue;
-            }
-            update(ni, nj, distance[i][j]+1);
-        }
-    }
-}
-
-
-/*bfs***************************************************/
-vector<vector<int>> graph
+/*  bfs  */
 void bfs(){ 
+    vector<vector<int>> graph
     
     queue<int> q;
     vector<int> distance(n, -1);
@@ -62,11 +23,46 @@ void bfs(){
     while(!q.empty()){
         int u = q.front(); q.pop();
         for(auto v : graph[u]){
-            if(distance[v] != -1){
-                continue; //もう探索済み
+            if(distance[v] == -1){
+                distance[v] = distance[u] + 1;
+                q.push(v);
             }
-            distance[v] = distance[u] + 1;
-            q.push(v);
+
+        }
+    }
+}
+
+// 4近傍
+const int di[] = {-1, 0, 1, 0};     //8近傍なら　{-1, -1, -1, 0, 0, 1, 1, 1}
+const int dj[] = {0, -1, 0, 1};     //          {-1, 0, 1, -1, 1, -1, 0, 1}
+// 6近傍
+const int dy[6] =      {0, 1, 1, 0, -1, -1};
+const int dx[2][6] = { {1, 1, 0, -1, 0, 1}, 
+                        {1, 0, -1, -1, -1, 0} }; 
+void bfs(){
+    
+    queue<P> q;
+    vector<vector<int>> dis(h, vector<int>(w, -1));
+    q.push({0, 0});
+    dis[0][0] = 0;
+    
+    while(!q.empty()){
+        int ny = q.front().first;
+        int nx = q.front().second;
+        q.pop();
+        rep(i, 4){
+            int y = ny + dy[i];
+            int x = nx + dx[i];
+            if(x < 0 || y < 0 || x >= w || y >= h){
+                continue;
+            }
+            if(graph[y][x] == '#'){
+                continue;
+            }
+            if(dis[y][x] == -1){
+                dis[y][x] = dis[ny][nx] + 1;
+                q.push({y, x});
+            }
         }
     }
 }

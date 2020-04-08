@@ -12,3 +12,4 @@ class Combination{
 }
 note top : コンストラクタで 0 ~ n までの階乗と逆元をもとめる。calc関数 で O(1) で値を求める。
 ```
+

@@ -1,5 +1,5 @@
 // 逆元
-ll mod_inv(ll a){
+int mod_inv(int a){
     ll b = mod, u = 1, v = 0;
     while(b){
         ll t = a / b;
@@ -50,6 +50,7 @@ vector<int> divisor(int n){
     sort(ret.begin(), ret.end());
     return ret;
 }
+
 // 素因数分解
 // pairのfirstに素因数　secondに素因数の数
 template <class T>

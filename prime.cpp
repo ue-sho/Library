@@ -2,31 +2,36 @@ class Prime{
 public:
     int n;
     vector<int> factor, primes;    
-    //エラストテネスの篩
-    constexpr Prime(int n=100000) : n(n), factor(n+1){
+    // エラストテネスの篩
+    Prime(int n=100000) : n(n), factor(n+1){
         factor[0] = factor[1] = -1;
-        for(ll i=2; i <= n; ++i){
-            if(factor[i]) continue;
+        for(int i=2; i <= n; ++i){
+            if(factor[i]){
+                continue;
+            }
             primes.push_back(i);
             factor[i] = i;
-            for(ll j = i*i; j <= n; j += i){
-                if(!factor[j]) factor[j] = i;
+            for(int j = i*i; j <= n; j += i){
+                if(!factor[j]){
+                    factor[j] = i;
+                }
             }
         }
     }
-    constexpr bool is_prime(int x){
+    // 素数判定
+    bool is_prime(int x){
         return factor[x] == x;
     }
-    //約数列挙
-    constexpr vector<int> factorList(int x){
+    // 約数列挙
+    vector<int> factorList(int x){
         vector<int> ret;
         while(x != 1){
             ret.push_back(factor[x]);
             x /= factor[x];
         }
     }
-    //素因数分解
-    constexpr vector<P> factorize(int x){
+    // 素因数分解
+    vector<P> factorize(int x){
         vector<int> fl = factorList(x);
         if(fl.size() == 0){
             return {};

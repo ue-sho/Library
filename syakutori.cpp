@@ -2,11 +2,11 @@
 //尺取り法
 int syakutori() {
 
-    ll ans = 0;
+    int ans = 0;
     int right = 0;
-    ll sum = 0;
+    int sum = 0;
     for (int left = 0; left < n; ++left) {
-        while (right < n /* &&  sum * a[right] <= K (条件式)*/) {
+        while (right < n /* && (条件式)*/) {
             sum += a[right];
             ++right;
         }
@@ -15,7 +15,7 @@ int syakutori() {
             ++right;
         }
         else{
-            sum -= a[left]; // left を除く ここはとりあえず左のやつをなかったことにする
+            sum -= a[left]; // left を除く　左のやつをなかったことにする
         }
     }
     cout << ans << endl;

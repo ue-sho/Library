@@ -1,8 +1,8 @@
 constexpr int mod = 1000000007;
 class mint {
 public:
-    ll x;
-    constexpr mint(long long x=0) : x((x % mod + mod) % mod) {}
+    int x;
+    constexpr mint(int x=0) : x((x % mod + mod) % mod) {}
     constexpr mint operator-() const { 
       return mint(-x);
     }
@@ -30,7 +30,7 @@ public:
         mint res(*this);
         return res*=a;
     }
-    constexpr mint pow(ll t) const {
+    constexpr mint pow(int t) const {
         if (!t) return 1;
         mint a = pow(t>>1);
         a *= a;

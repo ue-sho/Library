@@ -1,6 +1,7 @@
-// 最小全域木(minimum spaninng tree)　// コストが最小になるような木を作る
+// 最小全域木(minimum spaninng tree)　
+// コストが最小になるような木を作る　コストを出力
 struct edge {
-    int from, to;
+    int to;
     int cost;
 };
 
@@ -8,7 +9,7 @@ int prim(vector<vector<edge>>& edges, int V) {
     int res = 0;
     vector<bool> used(V, false);
     // P -> first : コスト, second : 行先  // コストが小さい順に出しいく
-    priority_queue<P, vector<P>, greater<>> priorityQueue;
+    priority_queue<P, vector<P>, greater<P>> priorityQueue;
     priorityQueue.emplace(0, 0);
     while (!priorityQueue.empty()) {
         P p = priorityQueue.top();
@@ -18,9 +19,9 @@ int prim(vector<vector<edge>>& edges, int V) {
         }
         used[p.second] = true;
         res += p.first;
-        for(edge<T> &e : edges[p.second]){
+        for(const auto e : edges[p.second]){
             if(!used[e.to]){
-                priorityQueue.push({e.cost, e.to});
+                priorityQueue.emplace(e.cost, e.to);
             }
         }
     }

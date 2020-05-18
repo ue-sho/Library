@@ -1,16 +1,5 @@
-/*  dfs  */
-vector<vector<int>> graph;
 
-void dfs(int v, int pre = -1){
-    for(auto u : graph[v]){
-        if(u == pre){
-            continue;
-        }
-        dfs(u, v);
-    }
-}
-
-/*  bfs  */
+/* 隣接リスト */
 void bfs(){ 
     vector<vector<int>> graph
     
@@ -32,13 +21,20 @@ void bfs(){
     }
 }
 
+
+/* 隣接行列 */
+
 // 4近傍
 const int di[] = {-1, 0, 1, 0};     //8近傍なら　{-1, -1, -1, 0, 0, 1, 1, 1}
 const int dj[] = {0, -1, 0, 1};     //          {-1, 0, 1, -1, 1, -1, 0, 1}
+// 8近傍
+const int di[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+const int dj[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 // 6近傍
 const int dy[6] =      {0, 1, 1, 0, -1, -1};
 const int dx[2][6] = { {1, 1, 0, -1, 0, 1}, 
-                        {1, 0, -1, -1, -1, 0} }; 
+                        {1, 0, -1, -1, -1, 0} };
+
 void bfs(){
     
     queue<P> q;

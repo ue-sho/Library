@@ -3,6 +3,8 @@ struct edge {
     int cost;
 };
 
+// vector<int> distance(n, INT_MAX); //infで初期化する必要がある
+
 void dijkstra(const vector<vector<edge>>& edges, vector<int>& distance, int start_point) {
     distance[start_point] = 0;
 

@@ -1,4 +1,6 @@
-//セグメントツリー
+// Segment木
+// かつっぱさん youtube 解説
+// https://www.youtube.com/watch?v=ReGvflPU81c
 
 const int SEG_LEN = 1 << 17; //131072 (10の5乗より大きい2進数)
 

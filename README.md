@@ -1,15 +1,36 @@
-# Library
-競プロlibrary
+#競技プログラミング用　ライブラリ
 
-___plantUMLが使えるかどうかの検証__
-```plantuml
-class Combination{
-    - fac : vector<long long> 
-    - finv : vector<long long> 
-    - inv : vector<long long>
-    + Combination(n : int)
-    + calc(n : int, k : int) : long long
-}
-note top : コンストラクタで 0 ~ n までの階乗と逆元をもとめる。calc関数 で O(1) で値を求める。
-```
+###Data Structure
+- [Union Find]()
+- [セグメント木]()
+- [BIT(Binary Indexed Tree)]()
+
+###DP
+- [LCS(最長共通部分列)]()
+- [LCS(最長増加部分列)]()
+
+###Graph
+- [深さ優先探索]()
+- [幅優先探索]()
+- [ダイクストラ]()
+- [ワ―シャルフロイド]()
+- [ベルマンフォード]()
+- [最小全域木(Prim)]()
+- [最小全域木(Kruskal)]()
+
+###Mathmatic
+- [組み合わせ]()
+- [素数関連(素数判定, 素因数分解, 約数)]()
+- [mod int]()
+
+###Search
+- [めぐる式二分探索]()
+- [尺取り法]()
+
+###String
+- [単一パターン検索(KMP)]()
+- [ローリングハッシュ]()
+- [2次元ローリングハッシュ]()
+- [Suffix Array]()
+- [Z-algorithm]()
 

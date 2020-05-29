@@ -1,6 +1,8 @@
+constexpr long long mod = 1e9 + 7; 
+
 // 逆元
-int mod_inv(int a){
-    ll b = mod, u = 1, v = 0;
+long long mod_inv(int a){
+    long long b = mod, u = 1, v = 0;
     while(b){
         ll t = a / b;
         a -= t * b;
@@ -13,17 +15,6 @@ int mod_inv(int a){
         u += mod;
     }
     return u;
-}
-
-// ワーシャルフロイド
-void warshall_floyd(int n) {
-  for (int k = 0; k < n; k++){
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
-      }
-    }
-  }
 }
 
 //最大公約数

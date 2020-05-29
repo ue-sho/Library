@@ -1,4 +1,3 @@
-
 //尺取り法
 int syakutori() {
 
@@ -10,12 +9,13 @@ int syakutori() {
             sum += a[right];
             ++right;
         }
-        ans = max(ans, right - left); // 更新  //数え上げはこれ　ans += right - left;
+        ans = /* 式 */;         // 更新  
+                                // 数え上げ -> ans += right - left;
         if (left == right){
             ++right;
         }
         else{
-            sum -= a[left]; // left を除く　左のやつをなかったことにする
+            sum -= a[left];     // left を除く(左のやつをなかったことにする)
         }
     }
     cout << ans << endl;

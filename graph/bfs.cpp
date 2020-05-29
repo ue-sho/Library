@@ -1,43 +1,47 @@
+#include<iostream>
+#include<vector>
+#include<queue>
+using namespace std;
 
 /* 隣接リスト */
-void bfs(){ 
-    vector<vector<int>> graph
+vector<int> bfs(vector<vector<int>>& graph){
     
     queue<int> q;
-    vector<int> distance(n, -1);
-
+    vector<int> dis(n, -1);
     q.push(0);
-    distance[0] = 0;
+    dis[0] = 0;
 
     while(!q.empty()){
         int u = q.front(); q.pop();
         for(auto v : graph[u]){
-            if(distance[v] == -1){
-                distance[v] = distance[u] + 1;
+            if(dis[v] == -1){
+                dis[v] = dis[u] + 1;
                 q.push(v);
             }
-
         }
     }
+    return dis;
 }
 
 
 /* 隣接行列 */
 
 // 4近傍
-const int di[] = {-1, 0, 1, 0};     //8近傍なら　{-1, -1, -1, 0, 0, 1, 1, 1}
-const int dj[] = {0, -1, 0, 1};     //          {-1, 0, 1, -1, 1, -1, 0, 1}
+constexpr int di[] = {-1, 0, 1, 0};
+constexpr int dj[] = {0, -1, 0, 1};
 // 8近傍
-const int di[] = {-1, -1, -1, 0, 0, 1, 1, 1};
-const int dj[] = {-1, 0, 1, -1, 1, -1, 0, 1};
-// 6近傍
-const int dy[6] =      {0, 1, 1, 0, -1, -1};
-const int dx[2][6] = { {1, 1, 0, -1, 0, 1}, 
-                        {1, 0, -1, -1, -1, 0} };
+constexpr int di[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+constexpr int dj[] = {-1, 0, 1, -1, 1, -1, 0, 1};
+// 6近傍    
+// 参考：JOI 2012 予選5 E イルミネーション(https://atcoder.jp/contests/joi2012yo/tasks/joi2012yo_e)
+constexpr int dy[6]    = {0, 1, 1, 0, -1, -1};
+constexpr int dx[2][6] = { {1, 1, 0, -1, 0, 1}, 
+                           {1, 0, -1, -1, -1, 0} };
 
-void bfs(){
+// 4近傍例
+vector<vector<int>> bfs(vector<vector<int>>& graph){
     
-    queue<P> q;
+    queue<pair<int, int>> q;
     vector<vector<int>> dis(h, vector<int>(w, -1));
     q.push({0, 0});
     dis[0][0] = 0;
@@ -61,4 +65,5 @@ void bfs(){
             }
         }
     }
+    return dis;
 }

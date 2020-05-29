@@ -1,8 +1,8 @@
 constexpr int mod = 1000000007;
 class mint {
 public:
-    int x;
-    constexpr mint(int x=0) : x((x % mod + mod) % mod) {}
+    long long x;
+    constexpr mint(long long x=0) : x((x % mod + mod) % mod) {}
     constexpr mint operator-() const { 
       return mint(-x);
     }

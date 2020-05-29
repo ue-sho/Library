@@ -1,3 +1,14 @@
+// SuffixArray　部分文字列が何個あるか分かる
+//
+// AOJ ALDS1 14 D Multiple String Matching
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+
 class SuffixArray{
     string s;
     vector<int> sort_idx, rev;
@@ -90,3 +101,24 @@ public:
         return upper_bound(T) - lower_bound(T);
     }
 };
+
+
+int main(){
+    
+    string t;
+    int q;
+    cin >> t >> q;
+    
+    SuffixArray sort_idx(t);
+    for(int i = 0; i < q; ++i){
+        string p;
+        cin >> p;
+        if(sort_idx.count(p) > 0){
+            cout << 1 << endl;
+        }
+        else{
+            cout << 0 << endl;
+        }
+    }
+    return 0;
+}

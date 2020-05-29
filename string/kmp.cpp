@@ -1,6 +1,15 @@
-// クヌースーモリス―プラット法
+// クヌース・モリス・プラット法
 // 単一パターン検索
-template<class T> class KMP{
+//
+// AOJ ALDS1 14 B String Search
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+template<class T> 
+class KMP{
     T pattern;
     vector<int> fail;
 public:
@@ -42,3 +51,19 @@ public:
         return res;
     }
 };
+
+int main() {
+
+    string t, p;
+    cin >> t >> p;
+
+    KMP<string> kmp(p);
+
+    vector<int> ans = kmp.match(t);
+
+    for(auto x : ans){
+        cout << x << endl;
+    }
+
+    return 0;
+} 

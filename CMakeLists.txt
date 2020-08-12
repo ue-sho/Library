@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(Library_Test)
+enable_testing()
+add_subdirectory(algorithm)
+add_subdirectory(test)

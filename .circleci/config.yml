@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+    build:
+        docker:
+            - image: srzzumix/googletest
+        steps:
+            - checkout
+            - run:
+                name: Test
+                command: |
+                    mkdir build
+                    cd build
+                    cmake ..
+                    make
+                    ctest

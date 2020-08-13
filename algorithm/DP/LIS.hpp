@@ -1,5 +1,4 @@
 // 最長増加部分列
-
 #include <iostream>
 
 const int MAX = 100000;
@@ -16,7 +15,7 @@ int lis()
             dp[length++] = a[i];
         }
         else {
-            *lower_bound(dp, dp + length, a[i]) = a[i];
+            *std::lower_bound(dp, dp + length, a[i]) = a[i];
         }
     }
     return length;

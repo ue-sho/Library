@@ -1,5 +1,4 @@
 // 最長共通部分列
-
 #include <iostream>
 #include <vector>
 

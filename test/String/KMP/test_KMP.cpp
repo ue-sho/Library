@@ -1,3 +1,8 @@
+/**
+ *  AOJ ALDS1_14_B String Search
+ *  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
+ */
+
 #include <fstream>
 #include <iostream>
 

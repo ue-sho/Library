@@ -5,7 +5,6 @@ include(GoogleTest)
 
 add_executable(TestKMP test_KMP.cpp)
 
-target_link_libraries(TestKMP PRIVATE -lgtest -lgtest_main -lpthread -lgcov)
 target_link_libraries(TestKMP PRIVATE GTest::GTest GTest::Main)
 
 include_directories(

@@ -1,40 +1,40 @@
 #include <fstream>
 #include <iostream>
 
+#include "KMP.hpp"
 #include "gtest/gtest.h"
-#include "kmp.h"
 
 using namespace std;
 
-class MultipleTest : public ::testing::TestWithParam<int> {
+class TestKMP : public ::testing::TestWithParam<int> {
 };
 
-int StringSearch()
+void StringSearch()
 {
     string text, pattern;
     cin >> text >> pattern;
 
-    KMP<string> kmp(p);
+    KMP<string> kmp(pattern);
 
-    vector<int> ans = kmp.Match(t);
+    vector<int> ans = kmp.Match(text);
 
     for (auto x : ans) {
-        cout << x << endl;
+        cout << x << '\n';
     }
 }
 
-TEST_P(TestString, KMP)
+TEST_P(TestKMP, KMP)
 {
     int i = GetParam();
 
     stringstream in_file;
-    in_file << "kmp_test_data/input" << i << ".txt";
+    in_file << "../../../../test/String/KMP/test_data/input" << i << ".txt";
     ifstream in(in_file.str());
     ASSERT_FALSE(in.fail());
     cin.rdbuf(in.rdbuf());
 
     stringstream out_file;
-    out_file << "kmp_test_data/output" << i << ".txt";
+    out_file << "../../../../test/String/KMP/test_data/output" << i << ".txt";
     ifstream out(out_file.str());
     ASSERT_FALSE(out.fail());
 
@@ -47,6 +47,6 @@ TEST_P(TestString, KMP)
 
 INSTANTIATE_TEST_SUITE_P(
     ParamtererizedTest,
-    MultipleTest,
-    ::testing::Range(1, 11, 1)  // [1, 11)半開区間
+    TestKMP,
+    ::testing::Range(1, 11, 1)  // [1, 11)坊開区間
 );

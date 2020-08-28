@@ -53,5 +53,5 @@ TEST_P(TestKMP, KMP)
 INSTANTIATE_TEST_SUITE_P(
     ParamtererizedTest,
     TestKMP,
-    ::testing::Range(1, 11, 1)  // [1, 11)坊開区間
+    ::testing::Range(1, 11, 1)  // [1, 11)開区間
 );

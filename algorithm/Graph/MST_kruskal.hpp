@@ -2,11 +2,9 @@
 // クラスカル法
 
 #include <algorithm>
-#include <iostream>
 #include <vector>
-using namespace std;
 
-namespace kruskal {
+using namespace std;
 
 class UnionFind {
 public:
@@ -81,5 +79,3 @@ int Kruskal(vector<Edge>& edges, int n)
     }
     return min_cost;
 }
-
-}  // namespace kruskal

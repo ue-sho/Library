@@ -20,7 +20,7 @@ void MST_kruskal()
     int num_vertex = 0;
     cin >> num_vertex;
 
-    vector<kruskal::Edge> graph;
+    vector<Edge> graph;
     constexpr int kNotAdjacent = -1;  // 隣接していないことを表す
 
     for (int i = 0; i < num_vertex; ++i) {
@@ -33,7 +33,7 @@ void MST_kruskal()
         }
     }
 
-    cout << kruskal::Kruskal(graph, num_vertex) << endl;
+    cout << Kruskal(graph, num_vertex) << endl;
 }
 
 TEST_P(TestMST_kruskal, MST_kruskal)

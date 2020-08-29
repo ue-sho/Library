@@ -20,8 +20,8 @@ void MST_prim()
     int num_vertex = 0;
     cin >> num_vertex;
 
-    vector<vector<prim::Edge>> graph;  // 隣接リストとして持つ
-    constexpr int kNotAdjacent = -1;   // 隣接していないことを表す
+    vector<vector<Edge>> graph(num_vertex);  // 隣接リストとして持つ
+    constexpr int kNotAdjacent = -1;         // 隣接していないことを表す
 
     for (int i = 0; i < num_vertex; ++i) {
         for (int j = 0; j < num_vertex; ++j) {
@@ -33,7 +33,7 @@ void MST_prim()
         }
     }
 
-    cout << prim::Prim(graph, num_vertex) << endl;
+    cout << Prim(graph, num_vertex) << endl;
 }
 
 TEST_P(TestMST_prim, MSTprim)
@@ -41,7 +41,7 @@ TEST_P(TestMST_prim, MSTprim)
     int i = GetParam();
 
     stringstream in_file;
-    in_file << "../../../../test/Graph/MinimumSpanningTree/test_data/output" << i << ".txt";
+    in_file << "../../../../test/Graph/MinimumSpanningTree/test_data/input" << i << ".txt";
     ifstream in(in_file.str());
     ASSERT_FALSE(in.fail());
     cin.rdbuf(in.rdbuf());

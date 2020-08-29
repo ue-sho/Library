@@ -4,26 +4,25 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-using namespace std;
-using P = pair<int, int>;
 
-namespace prim {
+using namespace std;
 
 struct Edge {
-    int destination_;  //到達点
-    int cost_;         //移動コスト
+    int destination;  //到達点
+    int cost;         //移動コスト
 
-    Edge(int destination, int cost) : destination_(destination), cost_(cost) {}
+    Edge() = default;
+    Edge(int destination, int cost) : destination(destination), cost(cost) {}
 
     bool operator>(const Edge &edge) const
     {
-        return cost_ > edge.cost_;
+        return cost > edge.cost;
     }
 };
 
 // プリム法
 // 重み付き連結グラフの最小全域木のコストを求める
-int Prim(const vector<vector<Edge>> &graph, const int num_vertex)
+int Prim(const vector<vector<Edge>> &graph, int num_vertex)
 {
     vector<bool> visited(num_vertex, false);  // 訪れたかどうかを記録する
 
@@ -35,20 +34,18 @@ int Prim(const vector<vector<Edge>> &graph, const int num_vertex)
         Edge current_edge = pri_queue.top();
         pri_queue.pop();
 
-        if (visited[current_edge.destination_]) {
+        if (visited[current_edge.destination]) {
             continue;  // すでに訪問済み
         }
 
-        visited[current_edge.destination_] = true;
-        total_cost += current_edge.cost_;
+        visited[current_edge.destination] = true;
+        total_cost += current_edge.cost;
 
-        for (const Edge next_edge : graph[current_edge.destination_]) {
-            if (!visited[next_edge.destination_]) {
+        for (const Edge next_edge : graph[current_edge.destination]) {
+            if (!visited[next_edge.destination]) {
                 pri_queue.emplace(next_edge);
             }
         }
     }
     return total_cost;
 }
-
-}  // namespace prim

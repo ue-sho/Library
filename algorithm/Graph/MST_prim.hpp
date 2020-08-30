@@ -1,7 +1,6 @@
 // 最小全域木(minimum spanning tree)
 // プリム法
 
-#include <iostream>
 #include <queue>
 #include <vector>
 

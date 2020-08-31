@@ -1,40 +1,55 @@
-#include "gtest/gtest.h"
-#include "lis.hpp"
-
-using namespace std;
-
 /* 最長増加部分列
  *
  * AOJ DPL 1 D Longest Increasing Subsequence
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=ja
  */
-int test_lis()
+
+#include <fstream>
+#include <iostream>
+
+#include "LIS.hpp"
+#include "gtest/gtest.h"
+
+using namespace std;
+
+class TestLIS : public ::testing::TestWithParam<int> {
+};
+
+void LongestIncreasingSubsequence()
 {
+    int n;
     cin >> n;
+    vector<int> a(n);
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
     }
-
-    int ans = lis();
-    cout << ans << endl;
-
-    return 0;
+    cout << lis(a) << endl;
 }
 
-TEST(addTest, Negative)
+TEST_P(TestLIS, LIS)
 {
-    EXPECT_EQ(-5, add(-2, -3));
-    EXPECT_EQ(-1, add(-1, 0));
+    int i = GetParam();
+
+    stringstream in_file;
+    in_file << "../../../../test/DP/LIS/test_data/input" << i << ".txt";
+    ifstream in(in_file.str());
+    ASSERT_FALSE(in.fail());
+    cin.rdbuf(in.rdbuf());
+
+    stringstream out_file;
+    out_file << "../../../../test/DP/LIS/test_data/output" << i << ".txt";
+    ifstream out(out_file.str());
+    ASSERT_FALSE(out.fail());
+
+    string result = string(istreambuf_iterator<char>(out), istreambuf_iterator<char>());
+
+    testing::internal::CaptureStdout();
+    LongestIncreasingSubsequence();
+    ASSERT_STREQ(result.c_str(), testing::internal::GetCapturedStdout().c_str());
 }
 
-TEST(addTest, Zero)
-{
-    EXPECT_EQ(0, add(-2, 2));
-}
-
-TEST(addTest, Positive)
-{
-    EXPECT_EQ(1, add(1, 0));
-    EXPECT_EQ(2, add(1, 1));
-    EXPECT_EQ(120, add(55, 65));
-}
+INSTANTIATE_TEST_SUITE_P(
+    ParamtererizedTest,
+    TestLIS,
+    ::testing::Range(1, 11, 1)  // [1, 10)開区間
+);

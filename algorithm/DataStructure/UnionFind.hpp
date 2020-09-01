@@ -1,3 +1,6 @@
+#ifndef UNION_FIND_HPP
+#define UNION_FIND_HPP
+
 #include <vector>
 
 using namespace std;
@@ -41,3 +44,5 @@ public:
         return -d[find(x)];
     }
 };
+
+#endif

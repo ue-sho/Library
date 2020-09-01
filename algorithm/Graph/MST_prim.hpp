@@ -1,3 +1,6 @@
+#ifndef MST_PRIM_HPP
+#define MST_PRIM_HPP
+
 // 最小全域木(minimum spanning tree)
 // プリム法
 
@@ -48,3 +51,5 @@ int Prim(const vector<vector<Edge>> &graph, int num_vertex)
     }
     return total_cost;
 }
+
+#endif

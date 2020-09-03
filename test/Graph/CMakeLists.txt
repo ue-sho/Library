@@ -4,3 +4,4 @@ include_directories(${PROJECT_SOURCE_DIR}/algorithm/Graph)
 
 add_subdirectory(MinimumSpanningTree)
 add_subdirectory(BellmanFord)
+add_subdirectory(Dijkstra)

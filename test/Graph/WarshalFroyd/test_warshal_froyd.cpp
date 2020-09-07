@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "gtest/gtest.h"
-#include "washal_froyd.hpp"
+#include "warshal_froyd.hpp"
 
 using namespace std;
 
@@ -19,10 +19,10 @@ void warshal_froyd()
 {
     int v, e;
     cin >> v >> e;
-    const long long INF = 1LL << 60;
     vector<vector<long long>> cost(v, vector<long long>(v, INF));
     for (int i = 0; i < e; i++) {
-        int s, t, d;
+        int s, t;
+        long long d;
         cin >> s >> t >> d;
         cost[s][t] = d;
     }
@@ -40,7 +40,7 @@ void warshal_froyd()
     }
     if (nega) {
         cout << "NEGATIVE CYCLE" << endl;
-        return 0;
+        return;
     }
 
     for (int i = 0; i < v; i++) {

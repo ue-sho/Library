@@ -1,0 +1,20 @@
+15 18
+cacaababbcbacbbccc
+accababbccbacbaccb
+acbbcccccaccaababc
+bccacabbbcbbbcbcbb
+caabbbccbaaabbaaaa
+abcabbcaabacacaacc
+bbbaccbaacbbcaabac
+aaccbccbccabbccaac
+ccabcccbcaaacbacbc
+babbccacbaccaabaca
+acccaaaacaaaacacaa
+bbcccaccbbaaabcaba
+bcbaacbbbcbabccaac
+baccccaabbbbbcaabb
+cabcacabcccabbaaba
+3 1
+a
+a
+b

@@ -2,7 +2,6 @@
 // けんちょんさんの引用　(https://github.com/drken1215/algorithm/blob/master/String/rolling_hash.cpp)
 
 #include <algorithm>
-#include <iostream>
 #include <string>
 #include <vector>
 

@@ -2,10 +2,12 @@
 #include <iostream>
 #include <vector>
 
-int lcs(std::string x, std::string y)
+using namespace std;
+
+int lcs(string x, string y)
 {
     const int MAX = 1000;
-    std::vector<std::vector<int>> dp(MAX + 1, std::vector<int>(MAX + 1));
+    vector<vector<int>> dp(MAX + 1, vector<int>(MAX + 1));
 
     int cnt = 0;
     int n = x.length();
@@ -20,9 +22,9 @@ int lcs(std::string x, std::string y)
                 dp[i][j] = dp[i - 1][j - 1] + 1;
             }
             else {
-                dp[i][j] = std::max(dp[i - 1][j], dp[i][j - 1]);
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
             }
-            cnt = std::max(cnt, dp[i][j]);
+            cnt = max(cnt, dp[i][j]);
         }
     }
     return cnt;

@@ -1,3 +1,6 @@
+#ifndef KMP_HPP
+#define KMP_HPP
+
 /**
  *  クヌース・モリス・プラット法
  *  単一パターン検索
@@ -53,3 +56,5 @@ public:
         return result;
     }
 };
+
+#endif

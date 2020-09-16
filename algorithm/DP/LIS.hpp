@@ -1,12 +1,12 @@
 // 最長増加部分列
 #include <iostream>
+#include <vector>
+using namespace std;
 
-const int MAX = 100000;
-int n, a[MAX];
-int dp[MAX + 1];
-
-int lis()
+int lis(const vector<int> &a)
 {
+    int n = a.size();
+    vector<int> dp(n + 1);
     dp[0] = a[0];
     int length = 1;
 
@@ -15,7 +15,7 @@ int lis()
             dp[length++] = a[i];
         }
         else {
-            *std::lower_bound(dp, dp + length, a[i]) = a[i];
+            *lower_bound(dp.begin(), dp.begin() + length, a[i]) = a[i];
         }
     }
     return length;

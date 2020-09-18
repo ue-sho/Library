@@ -1,8 +1,6 @@
-#ifndef MST_PRIM_HPP
-#define MST_PRIM_HPP
-
 // 最小全域木(minimum spanning tree)
 // プリム法
+// 重み付き連結グラフの最小全域木のコストを求める
 
 #include <queue>
 #include <vector>
@@ -22,8 +20,6 @@ struct Edge {
     }
 };
 
-// プリム法
-// 重み付き連結グラフの最小全域木のコストを求める
 int Prim(const vector<vector<Edge>> &graph, int num_vertex)
 {
     vector<bool> visited(num_vertex, false);  // 訪れたかどうかを記録する
@@ -51,5 +47,3 @@ int Prim(const vector<vector<Edge>> &graph, int num_vertex)
     }
     return total_cost;
 }
-
-#endif

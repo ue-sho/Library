@@ -1,6 +1,7 @@
 // 最長増加部分列
-#include <iostream>
+
 #include <vector>
+
 using namespace std;
 
 int lis(const vector<int> &a)

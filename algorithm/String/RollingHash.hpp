@@ -5,13 +5,15 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class RollingHash {
 public:
     static const int base1 = 1007, base2 = 2009;
     static const int mod1 = 1000000007, mod2 = 1000000009;
-    std::vector<long long> hash1, hash2, power1, power2;
+    vector<long long> hash1, hash2, power1, power2;
 
-    RollingHash(const std::string &S)
+    RollingHash(const string &S)
     {
         int n = (int)S.size();
         hash1.assign(n + 1, 0);
@@ -27,7 +29,7 @@ public:
     }
 
     // get hash of S[left:right]
-    inline std::pair<long long, long long> get(int l, int r) const
+    inline pair<long long, long long> get(int l, int r) const
     {
         long long res1 = hash1[r] - hash1[l] * power1[r - l] % mod1;
         if (res1 < 0) res1 += mod1;
@@ -39,7 +41,7 @@ public:
     // get lcp of S[a:] and S[b:]
     inline int getLCP(int a, int b) const
     {
-        int len = std::min((int)hash1.size() - a, (int)hash1.size() - b);
+        int len = min((int)hash1.size() - a, (int)hash1.size() - b);
         int low = 0, high = len;
         while (high - low > 1) {
             int mid = (low + high) >> 1;
@@ -54,7 +56,7 @@ public:
     // get lcp of S[a:] and T[b:]
     inline int getLCP(const RollingHash &T, int a, int b) const
     {
-        int len = std::min((int)hash1.size() - a, (int)hash1.size() - b);
+        int len = min((int)hash1.size() - a, (int)hash1.size() - b);
         int low = 0, high = len;
         while (high - low > 1) {
             int mid = (low + high) >> 1;

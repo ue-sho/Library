@@ -5,13 +5,15 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class SuffixArray {
-    std::string s;
-    std::vector<int> sort_idx, rev;
+    string s;
+    vector<int> sort_idx, rev;
 
 public:
     // 接尾辞配列を作る
-    SuffixArray(const std::string& str) : s(str)
+    SuffixArray(const string& str) : s(str)
     {
         int n = s.size();
         s.push_back('$');
@@ -25,7 +27,7 @@ public:
                  }
                  return s[a] < s[b];
              });
-        std::vector<int> c(n + 1), r(n + 1), cnt(n + 1);
+        vector<int> c(n + 1), r(n + 1), cnt(n + 1);
         for (int i = 0; i <= n; i++) {
             r[i] = s[i];
         }
@@ -55,7 +57,7 @@ public:
     int operator[](int i) const { return sort_idx[i]; }
 
     // s の中に t があるかどうか
-    bool find(std::string& t, int s_idx, int t_idx)
+    bool find(string& t, int s_idx, int t_idx)
     {
         int s_len = s.size();
         int t_len = t.size();
@@ -72,7 +74,7 @@ public:
         return s_idx == s_len && t_idx < t_len;
     }
 
-    int lower_bound(std::string& t)
+    int lower_bound(string& t)
     {
         int left = 0;
         int right = s.size();
@@ -88,7 +90,7 @@ public:
         return right;
     }
 
-    int upper_bound(std::string& t)
+    int upper_bound(string& t)
     {
         t.back()++;
         int res = lower_bound(t);
@@ -96,7 +98,7 @@ public:
         return res;
     }
 
-    int count(std::string& T)
+    int count(string& T)
     {
         return upper_bound(T) - lower_bound(T);
     }

@@ -1,4 +1,6 @@
 /**
+ * Suffix Array
+ *
  * AOJ ALDS1 14 D Multiple String Matching
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
  */

@@ -1,6 +1,8 @@
 /**
- *  AOJ ALDS1_12_A Minimum Spanning Tree
- *  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A
+ * 最小全域木
+ *
+ * AOJ ALDS1_12_A Minimum Spanning Tree
+ * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A
  */
 
 #include <fstream>

@@ -1,4 +1,5 @@
-/* Union Find
+/**
+ *  Union Find
  *
  * AOJ ALDS1 11 D Connected Components
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_D&lang=ja

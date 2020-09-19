@@ -1,4 +1,6 @@
 /**
+ * Rolling Hash 2D
+ *
  * AOJ ALDS1 14 C Pattern Search
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_C
  */

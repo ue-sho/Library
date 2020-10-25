@@ -69,5 +69,5 @@ TEST_P(TestRollingHash2D, RollingHash)
 INSTANTIATE_TEST_SUITE_P(
     ParamtererizedTest,
     TestRollingHash2D,
-    ::testing::Range(1, 11, 1)  // [1, 10)開区間
+    ::testing::Range(1, 11, 1)  // [1, 10)é–‹åŒºé–“
 );

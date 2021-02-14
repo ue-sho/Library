@@ -1,6 +1,3 @@
-#ifndef MST_KRUSKAL_HPP
-#define MST_KRUSKAL_HPP
-
 // 最小全域木(minimum spanning tree)
 // クラスカル法
 
@@ -82,5 +79,3 @@ int Kruskal(vector<Edge>& edges, int n)
     }
     return min_cost;
 }
-
-#endif

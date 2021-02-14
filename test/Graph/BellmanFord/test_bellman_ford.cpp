@@ -1,6 +1,8 @@
 /**
- *  AOJ GRL_1_B Single Source Shortest Path (Negative Edges)
- *  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B&lang=ja
+ * Bellman Ford
+ *
+ * AOJ GRL_1_B Single Source Shortest Path (Negative Edges)
+ * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B&lang=ja
  */
 
 #include <fstream>

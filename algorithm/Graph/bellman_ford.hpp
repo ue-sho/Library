@@ -1,6 +1,3 @@
-#ifndef BELLMAN_FORD_HPP
-#define BELLMAN_FORD_HPP
-
 // ベルマンフォード(bellman_ford)   計算量：O(|E||V|)
 // 負のコストがあっても最短経路出せる
 
@@ -35,5 +32,3 @@ vector<long long> BellmanFord(int vertex, int start, vector<Edge> &edges)
     }
     return dis;
 }
-
-#endif

@@ -1,6 +1,3 @@
-#ifndef DIJKSTRA_HPP
-#define DIJKSTRA_HPP
-
 // ダイクストラ
 // 復元も可能
 
@@ -13,15 +10,14 @@ using namespace std;
 
 using P = pair<long long, int>;
 constexpr long long INF = 1LL << 60;
+struct edge {
+    int to;
+    long long cost;
+    edge(int to, long long cost)
+        : to(to), cost(cost) {}
+};
 
 class Dijkstra {
-    struct edge {
-        int to;
-        long long cost;
-        edge(int to, long long cost)
-            : to(to), cost(cost) {}
-    };
-
 public:
     int V;                       // 頂点数
     vector<vector<edge>> edges;  // 橋情報 from -> to のコスト
@@ -81,5 +77,3 @@ public:
         cout << endl;
     }
 };
-
-#endif

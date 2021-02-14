@@ -1,4 +1,5 @@
-/* 最長共通部分列
+/**
+ * 最長共通部分列
  *
  * AOJ ALDS1 10 C Longest Common Subsequence
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C&lang=ja

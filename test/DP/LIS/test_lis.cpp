@@ -1,4 +1,5 @@
-/* 最長増加部分列
+/**
+ * 最長増加部分列
  *
  * AOJ DPL 1 D Longest Increasing Subsequence
  * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=ja

@@ -1,6 +1,8 @@
 /**
- *  AOJ GPL 1 C All Pairs Shortest Path
- *  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja
+ * Warshal Froyd
+ *
+ * AOJ GPL 1 C All Pairs Shortest Path
+ * http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja
  */
 
 #include <fstream>

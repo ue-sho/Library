@@ -1,6 +1,8 @@
 /**
- *  よすぽさんのLibrary-Checker Shortest Path
- *  https://judge.yosupo.jp/problem/shortest_path/
+ * Dijkstra
+ *
+ * よすぽさんのLibrary-Checker Shortest Path
+ * https://judge.yosupo.jp/problem/shortest_path/
  */
 
 #include <fstream>

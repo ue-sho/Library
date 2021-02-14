@@ -1,12 +1,6 @@
-#ifndef KMP_HPP
-#define KMP_HPP
+// クヌース・モリス・プラット法
+// 単一パターン検索
 
-/**
- *  クヌース・モリス・プラット法
- *  単一パターン検索
- */
-
-#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -56,5 +50,3 @@ public:
         return result;
     }
 };
-
-#endif

@@ -1,5 +1,7 @@
 # 競技プログラミング用　ライブラリ
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ue-sho/Library/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ue-sho/Library/tree/master)
+
 ### Data Structure
 - [Union Find](https://github.com/ue-sho/Library/tree/master/algorithm/DataStructure/UnionFind.hpp)
 - [セグメント木](https://github.com/ue-sho/Library/tree/master/algorithm/DataStructure/segment_tree.cpp)

@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-    test:
+    build:
         docker:
             - image: srzzumix/googletest
         steps:
